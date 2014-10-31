@@ -110,8 +110,8 @@ def seed (svc, layer, levels = (0, 5), bbox = None, padding = 0, force = False, 
             startY = bottomleft[1] - (1 * padding)
             endY = topright[1] + metaSize[1] + (1 * padding)
             stepY = metaSize[1]
-        for y in range(startY, endY, stepY):
-            for x in range(startX, endX, stepX):
+        for y in range(int(startY), int(endY), int(stepY)):
+            for x in range(int(startX), int(endX), int(stepX)):
                 tileStart = time.time()
                 tile = Tile(layer,x,y,z)
                 bounds = tile.bounds()
